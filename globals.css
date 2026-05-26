@@ -1,0 +1,277 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Cyberpunk Premium Theme - AI World Hub */
+:root {
+  /* Deep slate background */
+  --background: #0f172a;
+  --foreground: #f0f4f8;
+  
+  /* Cards with subtle dark gradient */
+  --card: #1a1f3a;
+  --card-foreground: #f0f4f8;
+  
+  /* Popover */
+  --popover: #1a1f3a;
+  --popover-foreground: #f0f4f8;
+  
+  /* Primary: Neon Cyan */
+  --primary: #00d9ff;
+  --primary-foreground: #0f172a;
+  
+  /* Secondary: Purple accent */
+  --secondary: #b024ff;
+  --secondary-foreground: #f0f4f8;
+  
+  /* Neutral grays */
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  
+  /* Accent: Vibrant purple */
+  --accent: #8b5cf6;
+  --accent-foreground: #f0f4f8;
+  
+  /* Destructive */
+  --destructive: #ef4444;
+  --destructive-foreground: #fee2e2;
+  
+  /* Borders */
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #00d9ff;
+  
+  /* Chart colors */
+  --chart-1: #00d9ff;
+  --chart-2: #b024ff;
+  --chart-3: #8b5cf6;
+  --chart-4: #06b6d4;
+  --chart-5: #6366f1;
+  
+  /* Radius */
+  --radius: 0.75rem;
+  
+  /* Sidebar */
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #f0f4f8;
+  --sidebar-primary: #00d9ff;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #b024ff;
+  --sidebar-accent-foreground: #f0f4f8;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #00d9ff;
+  
+  /* Additional cyberpunk tokens */
+  --neon-cyan: #00d9ff;
+  --neon-purple: #b024ff;
+  --neon-glow: 0 0 20px rgba(0, 217, 255, 0.3);
+  --slate-950: #0f172a;
+  --slate-900: #0f172a;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f0f4f8;
+  --card: #1a1f3a;
+  --card-foreground: #f0f4f8;
+  --popover: #1a1f3a;
+  --popover-foreground: #f0f4f8;
+  --primary: #00d9ff;
+  --primary-foreground: #0f172a;
+  --secondary: #b024ff;
+  --secondary-foreground: #f0f4f8;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #8b5cf6;
+  --accent-foreground: #f0f4f8;
+  --destructive: #ef4444;
+  --destructive-foreground: #fee2e2;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #00d9ff;
+  --chart-1: #00d9ff;
+  --chart-2: #b024ff;
+  --chart-3: #8b5cf6;
+  --chart-4: #06b6d4;
+  --chart-5: #6366f1;
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #f0f4f8;
+  --sidebar-primary: #00d9ff;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #b024ff;
+  --sidebar-accent-foreground: #f0f4f8;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #00d9ff;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply bg-slate-950;
+  }
+}
+
+/* Cyberpunk Glassmorphism Effects */
+@layer utilities {
+  /* Glass Effect - Subtle */
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg;
+  }
+
+  /* Glass Effect - Strong */
+  .glass-strong {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg;
+  }
+
+  /* Neon Cyan Glow */
+  .glow-cyan {
+    @apply shadow-lg shadow-cyan-500/50;
+  }
+
+  /* Neon Purple Glow */
+  .glow-purple {
+    @apply shadow-lg shadow-purple-500/50;
+  }
+
+  /* Border Glow Effect */
+  .glow-border {
+    @apply border-cyan-500/50 shadow-lg shadow-cyan-500/20;
+  }
+
+  /* Radial Glow Background */
+  .radial-glow {
+    background: 
+      radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(176, 36, 255, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  /* Neon Border Glow - Cyan */
+  .neon-border-cyan {
+    @apply border border-cyan-500 shadow-lg shadow-cyan-500/50;
+  }
+
+  /* Neon Border Glow - Purple */
+  .neon-border-purple {
+    @apply border border-purple-500 shadow-lg shadow-purple-500/50;
+  }
+
+  /* Gradient Text - Cyan to Purple */
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  /* Animated Gradient Text */
+  .gradient-text-animated {
+    background: linear-gradient(90deg, #00d9ff, #b024ff, #00d9ff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  /* Smooth Fade In */
+  .fade-in {
+    @apply animate-in fade-in duration-500;
+  }
+
+  /* Smooth Fade In Up */
+  .fade-in-up {
+    @apply animate-in fade-in slide-in-from-bottom-4 duration-500;
+  }
+
+  /* Video Overlay Effect */
+  .video-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.4) 100%);
+  }
+
+  /* Success Indicator - Pulsing green */
+  .success {
+    @apply bg-emerald-500;
+  }
+
+  /* Success Indicator - Pulsing */
+  .animate-pulse-success {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Custom Animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Marquee Animation for Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2rem));
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
